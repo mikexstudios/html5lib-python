@@ -198,7 +198,8 @@ class HTMLSanitizerMixin(object):
         style=re.compile('url\s*\(\s*[^\s)]+?\s*\)\s*').sub(' ',style)
 
         # gauntlet
-        if not re.match("""^([:,;#%.\sa-zA-Z0-9!]|\w-\w|'[\s\w]+'|"[\s\w]+"|\([\d,\s]+\))*$""", style): return ''
+        # the following line has been modified to accomodate CSS properties like: -webkit-*. It passes tests.
+        if not re.match("""^([:,;#%.\sa-zA-Z0-9!]|-?\w(-\w)*|'[\s\w]+'|"[\s\w]+"|\([\d,\s]+\))*$""", style): return ''
         if not re.match("^\s*([-\w]+\s*:[^:;]*(;\s*|$))*$", style): return ''
 
         clean = []

@@ -1,0 +1,8 @@
+# pip requirements.txt file
+# See this file for sample syntax:
+# http://gist.github.com/192093
+# and also:
+# http://mathematism.com/2009/jul/30/presentation-pip-and-virtualenv/
+
+#Required for running tests:
+simplejson
