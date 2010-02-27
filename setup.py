@@ -37,7 +37,7 @@ setup(name='html5lib',
           for name in os.listdir(os.path.join('src','html5lib'))
           if os.path.isdir(os.path.join('src','html5lib',name)) and
               not name.startswith('.')],
-      package_dir = {'html5lib': 'src/html5lib'},
+      package_dir = {'': 'src'},
       test_suite = "tests.buildTestSuite",
       tests_require = ['simplejson']
       )
